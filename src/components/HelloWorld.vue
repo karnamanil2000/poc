@@ -1,5 +1,6 @@
 <template>
   <h1>Random Dog Images</h1>
+  <h1>Random Dog Images111</h1>
   <button @click="increment">{{ count }}</button>
   <button id="myCounter" @click="fontSize++">
     Increase font size
@@ -32,6 +33,7 @@
   <div v-else>
     Not Home, About and Contact.
   </div>
+
 </template>
 
 <script>

@@ -7,7 +7,7 @@
     <h2>Reactivity, Class and Style bindings, Conditional and List Rendering:</h2>
     <HelloWorld />
     <h2>Watch Example:</h2>
-    <WatchersComponent />
+    <WatchersComponent :wName="watchersName"/>
   </div>
 </template>
 
@@ -17,8 +17,9 @@ import HelloWorld from '@/components/HelloWorld.vue'
 import WatchersComponent from '@/components/WatchersComponent.vue'
 import TreeItem from '@/components/TreeItem.vue'
 
-var treeData = {
+const treeData = {
   name: 'My Tree',
+  watchersName: '',
   children: [
     { name: 'hello' },
     { name: 'wat' },
@@ -51,6 +52,9 @@ export default {
     return {
       treeData
     }
+  },
+  beforeMount () {
+    this.watchersName = 'anil kumar karnam siva'
   }
 }
 </script>

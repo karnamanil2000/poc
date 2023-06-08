@@ -6,6 +6,12 @@ export default {
 </script>
 
 <template>
-  <h4>{{ title }}</h4>
+  <h4 autoFocus className="red">{{ title }}</h4>
   <button @click="$emit('enlarge-text')">Enlarge text</button>
 </template>
+
+<style scoped>
+.red{
+  color: red;
+}
+</style>

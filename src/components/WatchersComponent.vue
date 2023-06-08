@@ -79,12 +79,12 @@ function tcase (name) {
 <template>
   <p>
     Ask a yes/no question:
-    <input v-model="question" />
+    <input class="typeText" v-model="question" />
   </p>
   <p>{{ answer }}</p>
   <h2>Computed Example:</h2>
   {{ name }}
-  <input v-model="name" />
+  <input id="typeTextId" v-model="name" />
   <p>Computed : {{ name != null && name != undefined && this.name != '' ? titleCase : '' }}</p>
   <p>{{ name != null && name != undefined && this.name != '' ? name.toUpperCase() : '' }}</p>
   <p>Method : {{ name != null && name != undefined && this.name != '' ? tcase(name) : '' }}</p>
@@ -96,6 +96,7 @@ import { exampleMixin } from '@/mixins/exampleMixin'
 export default {
   name: 'WatchersComponent',
   mixins: [exampleMixin],
+  props: { wName: String },
   data () {
     return {
       question: '',
@@ -155,7 +156,13 @@ export default {
     }
   },
   beforeMount () {
-    this.name = 'anil kumar karnam siva'
+    this.name = this.wName // 'anil kumar karnam siva'
   }
 }
 </script>
+
+<style scoped>
+.typeText {
+  font-size: 20px;
+}
+</style>
